@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class='container'>
+    <form action = '.' method="POST"> {% csrf_token %}
+        {{objform | crispy}}
+    <div class='row'>
+    <div class="col-md-4">
+        <button type='save' class='btn btn-success'>
+            Save  <i class="fas fa-save"></i>
+        </button>
+    </div>
+    <div class="col-md-4 offset-md-4">
+        <a href={% url 'blog_list'%} class='btn btn-info'> 
+            Return <i class="fas fa-database"></i></a>
+    </div>
+    </div>
+</div>
+{% endblock content %}
